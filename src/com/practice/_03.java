@@ -1,33 +1,23 @@
 package com.practice;
 
-import java.util.Scanner;
-
+/**
+ * 巧排扑克牌
+ * Created by CHX on 2019/3/21.
+ */
 public class _03 {
-
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-
-        int result1 = a*b/x(a,b);
-        int result2 = result1*c/x(result1,c);
-        System.out.println(result2);
-    }
-
-    //辗转相除法，取得最大公约数。a>b,取的是余数
-    public static int x(int a, int b){
-        int temp = 0;
-        if (a<b){  //保证大的在前
-            temp = a;
-            a = b;
-            b = temp;
+        //思路：用可变数组进行逆向操作
+        char[] ch = {'A','2','3','4','5','6','7','8','9','0','J','Q','K'};
+        StringBuffer sb = new StringBuffer();
+        sb.append('K');
+        //两个动作，一个是翻牌，反过来就是插入；另一个是调换牌的位置
+        for(int i=11;i>-1;i--){
+            //插入
+            sb.insert(0,ch[i]);
+            //交换将最后一个放到第一
+            sb.insert(0,sb.charAt(sb.length()-1));
+            sb.deleteCharAt(sb.length()-1);
         }
-        while(a%b!=0){
-            temp = a;
-            a = b;
-            b = temp%a;
-        }
-        return b==0?1:b;
+        System.out.println(sb.toString());
     }
 }

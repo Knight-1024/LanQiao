@@ -1,9 +1,11 @@
 package com.practice;
 
 /**
- * 纸牌三角形，不适用全局变量的dfs1~9全排序
+ * 纸牌三角形
+ * Created by CHX on 2019/3/27.
  */
 public class _10 {
+
     public static int sum;
 
     public static void dfs(int[] arr,int start){

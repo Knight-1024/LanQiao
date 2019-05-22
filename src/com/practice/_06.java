@@ -1,8 +1,12 @@
 package com.practice;
-    //借助两个数组，使用dfs输出全排列
 
 import java.util.Arrays;
+import java.util.Scanner;
 
+/**
+ * DFS全排列
+ * Created by CHX on 2019/3/24.
+ */
 public class _06 {
         private static int [] result;//存放全排列的结果
         private static boolean [] visit;//定义一个标记数组
@@ -23,7 +27,8 @@ public class _06 {
             }
         }
         public static void main(String[] args) {
-            total = 5;//以长度为5举例
+            Scanner sc = new Scanner(System.in);
+            total = sc.nextInt();
             result = new int[total];
             visit = new boolean[total];
             Arrays.fill(visit,true);

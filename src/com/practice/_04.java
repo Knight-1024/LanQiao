@@ -4,14 +4,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * 带分数，能够实现，但是运行超时！！必须要优化
- * 取值的优化
- int sum(int start,int end)
- {
- int i,sum=0;
- for(i=start;i<end;i++)
- sum=sum*10+a[i+1];
- return sum;
+ * 带分数
+ * Created by CHX on 2019/3/22.
  */
 public class _04 {
     public static int total = 9;

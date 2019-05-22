@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * 剪格子，dfs
+ * 剪格子
+ * Created by CHX on 2019/3/26.
  */
 public class _08 {
     public static int row;  //行
@@ -39,19 +40,19 @@ public class _08 {
             System.out.println(0);
         }
     }
-    //要怎么深搜？而且还是二维数组...应该还要传一个参数
-    public static void dfs(int temp, int residue){  //位数递减，剩余值
+
+    public static void dfs(int temp, int residue){
         if(xx == -1) return;
-        if(temp==0){//遍历完成
+        if(temp==0){
             if(residue*2==count){
-                //条件成立  怎么输出？  好像不能直接取得输出值吧，毕竟temp已经减掉了？又要新增加值？
+                //条件成立
                 System.out.println(xx);
                 xx = -1;
             }
             return;
         }
         boolean  bl = false;
-        //二维数组怎么遍历？？  加判断条件，如果前一个i没有选且前一个j也没有选，那么则不再继续。
+        //遍历二维数组
         for(int i=0;i<row;i++){
             for(int j=0;j<line;j++){
                 if(i==0 && j==0)  continue;
@@ -62,7 +63,8 @@ public class _08 {
                 }else if(i!=0 && j!=0){
                     if(visit[i][j-1] || visit[i-1][j]) bl = true;
                 }
-                if(bl){  //条件成立
+                if(bl){
+                    //条件成立
                     visit[i][j] = true;
                     dfs(temp-1,residue-grid[i][j]);
                     visit[i][j] = false;
@@ -71,8 +73,3 @@ public class _08 {
         }
     }
 }
-
-/*
-思路从取1位到N-1位，确定位数之后开始搜索，设置一个总和，每取一位则减去和，并判断是否等于总数的一半。
-
- */

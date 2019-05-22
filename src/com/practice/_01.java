@@ -1,6 +1,10 @@
 package com.practice;
 import java.util.Scanner;
 
+/**
+ * 混合三种背包问题
+ * Created by CHX on 2019/3/19.
+ */
 public class _01 {
     private static int[] dp;
 
@@ -43,10 +47,15 @@ public class _01 {
 
     /**
      * 01背包解法
-     * @param nweight 总重
-     * @param nvalue 总值
-     * @param W 背包重量
-     * @param i 第i件商品
+     *
+     * @param nweight
+     *          总重
+     * @param nvalue
+     *          总值
+     * @param W
+     *          背包重量
+     * @param i
+     *          第i件商品
      */
     private static void zeroOnePack(int nweight, int nvalue, int W,int i){
         for(int j = W;j >= nweight; j--){
@@ -58,10 +67,15 @@ public class _01 {
 
     /**
      * 完全背包解法
-     * @param nweight 总重
-     * @param nvalue 总值
-     * @param W 背包重量
-     * @param i 第i件商品
+     *
+     * @param nweight
+     *          总重
+     * @param nvalue
+     *          总值
+     * @param W
+     *          背包重量
+     * @param i
+     *          第i件商品
      */
     private static void completePack(int nweight, int nvalue, int W,int i){
         for(int j = nweight; j <= W; j++){  //注意这里，01和完全背包在这里只有遍历的方向不同
@@ -71,23 +85,3 @@ public class _01 {
         System.out.println();
     }
 }
-
-/**
- * 输入
- * 
- * 第1行，2个整数，N和W中间用空格隔开。N为物品的种类，W为背包的容量。(1 <= N <= 100，1 <= W <= 50000) 第2 -
- * N + 1行，每行3个整数，Wi，Pi和Ci分别是物品体积、价值和数量。(1 <= Wi, Pi <= 10000， 1 <= Ci <=
- * 200)
- * 
- * 输出
- * 
- * 输出可以容纳的最大价值。
- * 
- * 输入示例
- * 
- * 3 6 2 2 5 3 3 8 1 4 1
- * 
- * 输出示例
- * 
- * 9
- */
